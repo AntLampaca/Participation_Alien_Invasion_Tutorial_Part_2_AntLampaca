@@ -1,7 +1,16 @@
 from pathlib import Path
 class Settings:
+    """
+    Stores values for the alien invasion game
 
+    contains game window, fps, game images, ship properties and bullet behavior
+    """
     def __init__(self):
+        """
+        Initializes all game settings
+
+        defines most game values, for screen size, fps, ship movement, and laser behavior
+        """
         self.name: str = 'Alien Invasion'
         self.screen_w = 1200
         self.screen_h = 800

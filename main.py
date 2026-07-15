@@ -5,8 +5,20 @@ from ship import Ship
 from arsenal import Arsenal
 
 class AlienInvasion:
+    """
+    Main class that manages the game
 
+    Initializes the pygame environment, creates the game window,
+    handles the game loop, processes user input, and updates display.
+    """
     def __init__(self):
+        """
+        Initializes the game, and creates all objects
+
+        Sets up pygame, loads settings, creates the display window,
+        loads background image, initializes game clock, and creates
+        the player ship.
+        """
         pygame.init()
         self.settings = Settings()
 
@@ -26,7 +38,12 @@ class AlienInvasion:
         self.ship = Ship(self, Arsenal(self))
     
     def run_game(self):
-        #Game loop
+        """
+        Starts the main game loop
+
+        checks for player input, updates game objects,
+        refreshes the screen, and controls game fps
+        """
         while self.running:
             self._check_events()
             self.ship.update()
@@ -35,11 +52,21 @@ class AlienInvasion:
             self.clock.tick(self.settings.FPS)
 
     def _update_screen(self):
+        """
+        Updates the game display
+
+        draws the background, renders game objects, and refreshes
+        the game window
+        """
         self.screen.blit(self.bg, (0,0))
         self.ship.draw()
         pygame.display.flip()
 
     def _check_events(self):
+        """
+        handles pygame events like key presses
+        and quit game
+        """
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
@@ -51,6 +78,11 @@ class AlienInvasion:
                 self._check_keyup_events(event)
 
     def _check_keydown_events(self, event):
+        """
+        Looks for keys being pressed
+
+        controls ship movement, firing, and quiting the game
+        """
         if event.key == pygame.K_RIGHT:
             self.ship.moving_right = True
         elif event.key == pygame.K_LEFT:
@@ -65,6 +97,11 @@ class AlienInvasion:
             sys.exit()
 
     def _check_keyup_events(self, event):
+        """
+        Looks for keys being not pressed anymore
+
+        stops ship movent when a key is not pressed anymore
+        """
         if event.key == pygame.K_RIGHT:
             self.ship.moving_right = False
         elif event.key == pygame.K_LEFT:
