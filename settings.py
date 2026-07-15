@@ -23,8 +23,13 @@ class Settings:
         self.ship_speed = 5
 
         self.bullet_file = Path.cwd() / 'game_images' / 'laser_red.png'
-        #will add later self.laser_sound = Path.cwd()
+        #will add later self.laser_sound = Path.cwd() /
         self.bullet_speed = 7
         self.bullet_w = 32
         self.bullet_h = 64
         self.bullet_amount = 5
+
+        self.alien_file = Path.cwd() / 'game_images' / 'alien.png'
+        self.alien_w = 64
+        self.alien_h = 64
+        self.fleet_speed = 5
