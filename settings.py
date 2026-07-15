@@ -12,3 +12,10 @@ class Settings:
         self.ship_w = 40
         self.ship_h = 60
         self.ship_speed = 5
+
+        self.bullet_file = Path.cwd() / 'game_images' / 'laser_red.png'
+        #will add later self.laser_sound = Path.cwd()
+        self.bullet_speed = 7
+        self.bullet_w = 32
+        self.bullet_h = 64
+        self.bullet_amount = 5
