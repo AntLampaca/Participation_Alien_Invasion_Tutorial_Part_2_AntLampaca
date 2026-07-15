@@ -32,4 +32,4 @@ class Settings:
         self.alien_file = Path.cwd() / 'game_images' / 'alien.png'
         self.alien_w = 64
         self.alien_h = 64
-        self.fleet_speed = 5
+        self.fleet_speed = 2
