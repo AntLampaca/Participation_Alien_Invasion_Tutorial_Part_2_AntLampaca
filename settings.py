@@ -18,8 +18,8 @@ class Settings:
         self.bg_file = Path.cwd() / 'game_images' / 'background.png'
 
         self.ship_file = Path.cwd() / 'game_images' / 'player.png'
-        self.ship_w = 40
-        self.ship_h = 60
+        self.ship_w = 64
+        self.ship_h = 64
         self.ship_speed = 5
 
         self.bullet_file = Path.cwd() / 'game_images' / 'laser_red.png'
@@ -30,8 +30,8 @@ class Settings:
         self.bullet_amount = 5
 
         self.alien_file = Path.cwd() / 'game_images' / 'alien.png'
-        self.alien_w = 64
-        self.alien_h = 64
+        self.alien_w = 44
+        self.alien_h = 44
         self.fleet_speed = 5
         self.fleet_direction = 1
         self.fleet_drop_speed = 32
