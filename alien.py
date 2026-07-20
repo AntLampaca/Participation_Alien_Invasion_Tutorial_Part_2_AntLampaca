@@ -7,7 +7,8 @@ if TYPE_CHECKING:
 
 class Alien(Sprite):
     """
-    
+    is responsible for most alien behavior
+    how they look and some movement logic
     """
     def __init__(self, fleet: 'AlienFleet', x: float, y: float):
         """
@@ -32,7 +33,7 @@ class Alien(Sprite):
 
     def update(self):
         """
-        
+        is responsible for alien speed
         """
         temp_speed = self.settings.fleet_speed
 
@@ -41,10 +42,13 @@ class Alien(Sprite):
         self.rect.y = self.y
 
     def check_edges(self):
+        """
+        checks for edges using screen boundry
+        """
         return (self.rect.right >= self.boundaries.right or self.rect.left <= self.boundaries.left)
 
     def draw_alien(self):
         """
-        
+        draws alien sprites
         """
         self.screen.blit(self.image, self.rect)

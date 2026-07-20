@@ -65,7 +65,11 @@ class AlienInvasion:
             self.clock.tick(self.settings.FPS)
 
     def _check_collisions(self):
-        #check collisions for ship
+        """
+        handles collisions for ship and alien fleet
+
+        and if fleet is destroyed, resets level
+        """
         if self.ship.check_collisions(self.alien_fleet.fleet):
             self._check_game_status()
             #subtract one life if possible
@@ -84,6 +88,12 @@ class AlienInvasion:
             self._reset_level()
 
     def _check_game_status(self):
+        """
+        checks game status
+
+        manages ships left, resets level if lives lost
+        and controls if game is deactivated
+        """
         if self.game_stats.ships_left > 0:
             self.game_stats.ships_left -= 1
             self._reset_level()
@@ -92,6 +102,10 @@ class AlienInvasion:
             self.game_active = False
 
     def _reset_level(self):
+        """
+        resets level by removing all objects on screen, but not the ship
+        and creates a new fleet
+        """
         self.ship.arsenal.arsenal.empty()
         self.alien_fleet.fleet.empty()
         self.alien_fleet.create_fleet()
