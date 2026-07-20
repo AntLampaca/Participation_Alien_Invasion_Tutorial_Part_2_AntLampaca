@@ -21,6 +21,7 @@ class Settings:
         self.ship_w = 64
         self.ship_h = 64
         self.ship_speed = 5
+        self.starting_ship_count = 3
 
         self.bullet_file = Path.cwd() / 'game_images' / 'laser_red.png'
         #will add later self.laser_sound = Path.cwd() /
