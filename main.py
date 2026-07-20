@@ -1,3 +1,10 @@
+"""
+Program Name: Main.py
+Author Antoni Labsz
+Purpose: Space invader like game
+Starter Code: None
+Date: July 19, 2026
+"""
 import sys
 import pygame
 from settings import Settings
